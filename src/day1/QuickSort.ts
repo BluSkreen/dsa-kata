@@ -4,13 +4,13 @@ function qs(arr: number[], lo: number, hi: number): void {
         return;
     }
     
-    const pivotIdx = partition(arr, lo, hi);
+    const pivotIdx = partitionR(arr, lo, hi);
 
     qs(arr, lo, pivotIdx - 1);
     qs(arr, pivotIdx + 1, hi);
 }
 
-function partition(arr: number[], lo: number, hi: number): number {
+function partitionR(arr: number[], lo: number, hi: number): number {
     const pivot = arr[hi];
 
     let idx = lo - 1;

@@ -33,7 +33,6 @@ function walk(graph: WeightedAdjacencyList,
     return false;
 }
 
-
 export default function dfs(
     graph: WeightedAdjacencyList, 
     source: number, 

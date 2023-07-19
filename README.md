@@ -60,7 +60,7 @@ module.exports = {
         "Stack",
         "QuickSort",
         "DijkstraList",
-        "PrimsList",
+        "PrimsList"
     ],
 }
 ```
