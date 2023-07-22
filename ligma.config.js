@@ -7,7 +7,7 @@ module.exports = {
 //        "TwoCrystalBalls",
 //        "BubbleSort",
 //        "SinglyLinkedList",
-        "DoublyLinkedList",
+//        "DoublyLinkedList",
 //        "Queue",
 //        "Stack",
 //        "ArrayList",
@@ -25,7 +25,7 @@ module.exports = {
         "Map",
         "MinHeap",
 //        "InsertionSort",
-        "MergeSort",
+//        "MergeSort",
         "DijkstraList",
         "PrimsList"
     ],
