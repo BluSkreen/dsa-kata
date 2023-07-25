@@ -14,10 +14,10 @@
         "typescript": "^4.7.4"
     },
     "scripts": {
-        "test": "jest DFSOnBST LRU DoublyLinkedList BTPreOrder BTInOrder BTPostOrder BTBFS CompareBinaryTrees DFSOnBST DFSGraphList Trie BFSGraphMatrix Map MinHeap MergeSort DijkstraList PrimsList",
+        "test": "jest LRU CompareBinaryTrees DFSGraphList Trie BFSGraphMatrix Map MinHeap DijkstraList PrimsList",
         "clear": "node ./scripts/clear.js",
         "prettier": "prettier --write ./src",
         "generate": "node ./scripts/generate.js",
-        "day": "echo src/day5"
+        "day": "echo src/day6"
     }
 }
