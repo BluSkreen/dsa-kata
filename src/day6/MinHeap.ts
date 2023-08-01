@@ -10,6 +10,31 @@ export default class MinHeap {
     }
 
     insert(value: number): void {
+        this.heap[this.length] = value;
+        this.heapifyUp(this.length);
+        this.length++;
+    }
+
+    delete(): number {
+        if (this.length === 0) {
+            return -1;
+        }
+        
+        const out = this.heap[0];
+        this.length--;
+        if (this.length === 0) {
+            const out = this.heap[0];
+            this.heap = [];
+            return out;
+        }
+
+        this.heap[0] = this.heap[this.length];
+        this.heapifyDown(0);
+        return out;
+    }
+
+    /*
+    insert(value: number): void {
         this.length++;
         this.heap.push(value);
         let curr = this.length - 1;
@@ -59,6 +84,46 @@ export default class MinHeap {
         }
 
         return value;
+    }
+    */
+
+    private heapifyDown(idx: number): void {
+        const leftIdx = this.leftChild(idx);
+        const rightIdx = this.rightChild(idx);
+
+        if (idx >= this.length || leftIdx >= this.length) {
+            return;
+        }
+
+        const leftValue = this.heap[leftIdx];
+        const rightValue = this.heap[rightIdx];
+        const value = this.heap[idx];
+
+        if (leftValue > rightValue && value > rightValue) {
+            this.heap[rightIdx] = this.heap[idx];
+            this.heap[idx] = rightValue;
+            this.heapifyDown(rightIdx);
+        } else if (value > leftValue) {
+            this.heap[leftIdx] = this.heap[idx];
+            this.heap[idx] = leftValue;
+            this.heapifyDown(leftIdx);
+        }
+    }
+
+    private heapifyUp(idx: number): void { 
+       if (idx === 0) {
+           return;
+       }
+
+       const p = this.parent(idx);
+       const parentV = this.heap[p];
+       const v = this.heap[idx];
+
+       if (parentV > v) {
+           this.heap[p] = v;
+           this.heap[idx] = parentV;
+           this.heapifyUp(p);
+       }
     }
 
     private parent(idx: number): number {
